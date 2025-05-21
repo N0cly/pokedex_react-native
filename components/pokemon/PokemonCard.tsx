@@ -29,7 +29,6 @@ export function PokemonCard({name, id, style, ...rest}: Props) {
 
 
     )
-
 }
 
 const styles = StyleSheet.create({
