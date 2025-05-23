@@ -8,7 +8,7 @@ export function RootView ({style, ...rest}: Props){
     const colors = useThemeColors()
 
     return (
-        <SafeAreaView style={[rootStyle.container, {backgroundColor: colors.tint}]} {...rest}/>
+        <SafeAreaView style={[rootStyle.container, {backgroundColor: colors.tint}, style]} {...rest}/>
     )
 }
 

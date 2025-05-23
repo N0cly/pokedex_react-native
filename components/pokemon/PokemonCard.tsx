@@ -3,6 +3,7 @@ import {Card} from "@/components/Card";
 import {ThemedText} from "@/components/ThemedText";
 import {useThemeColors} from "@/hooks/useThemeColors";
 import {Link} from "expo-router";
+import {getPokemonArtwork} from "@/functions/pokemon";
 
 
 type Props = {
@@ -19,7 +20,7 @@ export function PokemonCard({name, id, style, ...rest}: Props) {
             <Pressable style={style}>
                 <Card style={[styles.card]}>
                     <ThemedText style={styles.id} variant="caption" color="grayMedium">#{id.toString().padStart(3, '0')}</ThemedText>
-                    <Image source={{uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}} style={{width: 72, height: 72}}/>
+                    <Image source={{uri: getPokemonArtwork(id)}} style={{width: 72, height: 72}}/>
                     <ThemedText>{name}</ThemedText>
                     <View style={[styles.shadow, {backgroundColor: colors.grayBackground}]}/>
                 </Card>
